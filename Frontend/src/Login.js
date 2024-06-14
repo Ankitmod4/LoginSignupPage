@@ -19,25 +19,35 @@ function Login() {
         e.preventDefault();
          
         try {
-            let res = await axios.post("http://localhost:8000/Api/v1/Login", {
-               Email,  Password 
-            });
            
+            let res = await axios.post("http://localhost:8000/Api/v1/Login", {
+               Email,  Password  
+            });
+            
             setemail('');
             setpassword('');
            
             if (res.data.success) { 
             
                 
+               
                 const token = res.data.get.Token;
+                const rol = res.data.get.Role;
+                console.log(rol);
+               
                 console.log(token); 
                 localStorage.setItem('Token', JSON.stringify(token));
             
 
                 alert("USER Loged IN");
-                navigate('/dashboard');
-            
-                
+                if (rol === 'Admin') {
+                    navigate('/Admin');
+                }
+                else { 
+                    navigate('/Student');
+                }
+               
+                 
             }
         } catch (error) {
             console.log("Error during Login:", error);

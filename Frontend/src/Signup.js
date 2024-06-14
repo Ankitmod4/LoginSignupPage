@@ -88,7 +88,7 @@ function Signup() {
                   />
                 </div>
                 <button type="submit" className="btn btn-primary btn-block m-2">Create Account</button>
-                <Link to='/login' className='btn btn-danger'>Not a User</Link>
+                <Link to='/login' className='btn btn-danger'>Already A  User</Link>
               </form>
             </div>
           </div>

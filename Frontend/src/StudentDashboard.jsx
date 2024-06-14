@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dashboard = () => {
+const StudentDashboard = () => { 
   return (
     <div
       style={{
@@ -26,14 +26,16 @@ const Dashboard = () => {
             marginBottom: '10px',
           }}
         > 
-          ADMIN DASHBOARD
+          STUDENT DASHBOARD
         </h1>
         <p>
           Welcome to your personalized dashboard. Here you can view and manage your data.
         </p>
       </div>
-    </div>
+      <button ></button>
+    </div> 
+    
   );
 };
 
-export default Dashboard;
+export default StudentDashboard;

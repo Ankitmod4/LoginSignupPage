@@ -6,23 +6,25 @@ import './App.css';
 import Signup from './Signup';
   
 import Login from './Login';
-import DashboardPage from './Dashboard';
+import StudentDashboard from './StudentDashboard';
 import Dashboard from './Dashboard';
 
 function App() {
  
-
+ 
   return (
     <div> 
-     
+      
       <BrowserRouter>
         {/* <Signup /> */}
        
         <Routes>
-        
+           
           <Route path ='/login' element={<Login />} />
           <Route path='/' element={<Signup />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/Admin' element={<Dashboard />} />
+          <Route path='/Student' element={<StudentDashboard />} />
+          
           </Routes>
       
       </BrowserRouter>
