@@ -35,20 +35,24 @@ function Login() {
                 const rol = res.data.get.Role;
                 console.log(rol);
                
-                console.log(token); 
-                localStorage.setItem('Token', JSON.stringify(token));
-            
-
-                alert("USER Loged IN");
+               
+                localStorage.setItem('Token', token); 
+            localStorage.setItem('Role', rol);  
+                
+                alert("USER Loged IN"); 
                 if (rol === 'Admin') {
                     navigate('/Admin');
                 }
                 else { 
                     navigate('/Student');
+                } 
+                if (!token) {
+                    navigate('/login')
                 }
-               
                  
-            }
+            } 
+            
+            
         } catch (error) {
             console.log("Error during Login:", error);
             alert("Internal Server Error. Please try again later.");

@@ -28,7 +28,8 @@ exports.Login = async (req,res) => {
         if (checkingPass) { 
             
            
-            let Token = jwt.sign(payload, JWT_SECRET, { expiresIn: '2h' });
+            
+            let Token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
             let user = get.toObject();
             user.Token = Token;
                 

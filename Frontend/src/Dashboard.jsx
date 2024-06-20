@@ -1,6 +1,12 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const  handle = () => {
+    localStorage.removeItem('Token');
+   localStorage.removeItem('Role');
+   navigate('/login');
+  }
   return (
     <div
       style={{
@@ -31,6 +37,7 @@ const Dashboard = () => {
         <p>
           Welcome to your personalized dashboard. Here you can view and manage your data.
         </p>
+        <button onClick={handle}>LOGOUT</button>
       </div>
     </div>
   );
