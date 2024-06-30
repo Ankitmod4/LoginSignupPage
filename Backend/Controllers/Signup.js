@@ -1,7 +1,8 @@
+
 const model = require('../Model/Schema');
 const bcrypt = require('bcrypt');
 
-
+ 
 exports.Signup = async (req, res) => {
     const { Name, Email, Password, Role } = req.body;
     let hashedPassword; 

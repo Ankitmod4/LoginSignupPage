@@ -1,44 +1,54 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import './Dashboard.css'
 const Dashboard = () => {
   const navigate = useNavigate();
-  const  handle = () => {
+  const [data, setData] = useState([]);
+
+  const handleLogout = () => {
     localStorage.removeItem('Token');
-   localStorage.removeItem('Role');
-   navigate('/login');
-  }
+    localStorage.removeItem('Role');
+    navigate('/login');
+  };
+
+  useEffect(() => {
+    const url = "http://localhost:8000/api/v1/FetchData";
+    axios.get(url)
+      .then((response) => setData(response.data.data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-        backgroundColor: '#f0f0f0',
-      }}
-    >
-      <div
-        style={{
-          textAlign: 'center',
-          padding: '20px',
-          boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-          borderRadius: '5px',
-          backgroundColor: '#ffffff',
-        }}
-      >
-        <h1
-          style={{
-            color: '#007bff',
-            marginBottom: '10px',
-          }}
-        > 
-          ADMIN DASHBOARD
-        </h1>
-        <p>
-          Welcome to your personalized dashboard. Here you can view and manage your data.
-        </p>
-        <button onClick={handle}>LOGOUT</button>
-      </div>
+    <div className="dashboard-container">
+      <header className="dashboard-header">
+        <h1>Your Dashboard</h1>
+        {/* Add your logo or branding elements here */}
+      </header>
+      <main className="dashboard-content">
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.Email}>
+                <td>{item.Name}</td>
+                <td>{item.Role}</td>
+                <td>{item.Email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
+      </main>
     </div>
   );
 };

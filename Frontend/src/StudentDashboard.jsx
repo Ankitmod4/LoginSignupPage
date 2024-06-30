@@ -1,47 +1,24 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-const StudentDashboard = (props) => { 
+import './StudentDashboard.css'
+
+const StudentDashboard = (props) => {
   const navigate = useNavigate();
- const  handle = () => {
+  const handleLogout = () => {
     localStorage.removeItem('Token');
-   localStorage.removeItem('Role');
-   navigate('/login');
+    localStorage.removeItem('Role');
+    navigate('/login');
   }
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-        backgroundColor: '#f0f0f0',
-      }}
-    >
-      <div
-        style={{
-          textAlign: 'center',
-          padding: '20px',
-          boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-          borderRadius: '5px',
-          backgroundColor: '#ffffff',
-        }}
-      >
-        <h1
-          style={{
-            color: '#007bff',
-            marginBottom: '10px',
-          }}
-        > 
-          STUDENT DASHBOARD
-        </h1>
-        <p>
-          Welcome to your personalized dashboard. Here you can view and manage your data.
-        </p>
-        <button onClick={handle} >LOGOUT</button>
+    <div className="dashboard-container">
+      <div className="dashboard-card">
+        <h1 className="dashboard-title">STUDENT DASHBOARD</h1>
+        <p className="dashboard-welcome">Welcome to your personalized dashboard. Here you can view and manage your data.</p>
+        <button className="dashboard-logout-btn" onClick={handleLogout}>LOGOUT</button>
       </div>
-      
-    </div> 
-    
+    </div>
   );
 };
 

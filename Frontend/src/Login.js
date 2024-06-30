@@ -38,17 +38,18 @@ function Login() {
                
                 localStorage.setItem('Token', token); 
             localStorage.setItem('Role', rol);  
-                
+                localStorage.setItem('email', Email);
                 alert("USER Loged IN"); 
+                if (!token) {
+                    navigate('/login')
+                }
                 if (rol === 'Admin') {
                     navigate('/Admin');
                 }
                 else { 
                     navigate('/Student');
                 } 
-                if (!token) {
-                    navigate('/login')
-                }
+                
                  
             } 
             

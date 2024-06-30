@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 const { Signup } = require('../Controllers/Signup');
-const { Login } = require('../Controllers/Login');
+const { Login } = require('../Controllers/Login'); 
 const {Auth}=require('../Middlewares/Auth')
 const {Admin}=require('../Middlewares/Admin')
-const {Student}=require('../Middlewares/Student')
+const { Student } = require('../Middlewares/Student');
+const { FetchData } = require('../Controllers/FetchData');
+
 router.post('/signup', Signup);
 router.post('/login', Login);
 
@@ -15,7 +17,7 @@ router.get('/Student', Auth, Student, (req, res) => {
         message:"Welcome to Protected Route for Student"
     })
    
-        
+    
 })
 router.get('/Admin', Auth,Admin,(req, res) => {
     res.json({
@@ -25,5 +27,5 @@ router.get('/Admin', Auth,Admin,(req, res) => {
         
 })
 
-
+router.get('/FetchData', FetchData);
 module.exports = router;
