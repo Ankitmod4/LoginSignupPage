@@ -1,47 +1,118 @@
+/* Container for the entire dashboard */
 .dashboard-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .dashboard-card {
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    background-color: #ffffff;
-    width: 50%;
-    margin: 0 auto;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+}
 
+/* Card for the dashboard title */
+.dashboard-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* Dashboard title */
 .dashboard-title {
-    color: #007bff;
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .dashboard-welcome {
-    font-size: 18px;
-    color: #666666;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-logout-btn {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .dashboard-logout-btn:hover {
-    background-color: #0069d9;
-  }
-  
+  font-size: 28px;
+  font-weight: bold;
+  color: #343a40;
+  margin-bottom: 10px;
+}
+
+/* Logout button */
+.dashboard-logout-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.dashboard-logout-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Container for all courses */
+.courses-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Section for each category */
+.category-section {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Container for the list of courses */
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card for each course */
+.course-card {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-card:hover {
+  transform: scale(1.02);
+}
+
+/* Image for each course */
+.course-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+/* Information container for each course */
+.course-info {
+  text-align: center;
+}
+
+/* Title for each course */
+.course-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #343a40;
+  margin: 0 0 10px 0;
+}
+
+/* Description for each course */
+.course-description {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
