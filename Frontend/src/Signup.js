@@ -13,7 +13,7 @@ function Signup() {
         e.preventDefault(); 
          
         try {
-            let res = await axios.post("https://login-signup-page-lac.vercel.app//Api/v1/Signup", {
+            let res = await axios.post("http://localhost:8000//Api/v1/Signup", {
                 Name, Email, Role, Password
             });
             
