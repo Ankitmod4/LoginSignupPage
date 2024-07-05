@@ -20,7 +20,7 @@ function Login() {
          
         try {
            
-            let res = await axios.post("https://login-signup-page-lac.vercel.app//Api/v1/Login", {
+            let res = await axios.post("http://localhost:8000//Api/v1/Login", {
                Email,  Password  
             });
             
