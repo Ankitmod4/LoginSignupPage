@@ -24,7 +24,7 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <h1>Your Dashboard</h1>
-        {/* Add your logo or branding elements here */}
+       
       </header>
       <main className="dashboard-content">
         <table className="data-table">

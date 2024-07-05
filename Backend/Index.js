@@ -8,7 +8,7 @@ const DBconnect = require('./DBconnect');
 const router = require('./Routes/Route');
 app.use('/Api/v1', router);
 app.get('/',(req, res) => { 
-    res.send("Getting the data");
+    res.send("Getting the data"); 
 
 })
 app.listen(port,() => {
