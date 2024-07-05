@@ -14,7 +14,7 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    const url = "https://login-signup-page-lac.vercel.app//api/v1/FetchData";
+    const url = "http://localhost:8000//api/v1/FetchData";
     axios.get(url)
       .then((response) => setData(response.data.data))
       .catch((error) => console.log(error));
